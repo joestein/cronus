@@ -1,7 +1,9 @@
 Cronus
-========
+======
 
 Provides a simple example of using the Google Maps JavaScript API v3 http://code.google.com/apis/maps/documentation/javascript/basics.html with Scala Lift http://liftweb.net/
+
+Getting Started
 ---------------
 
 1) Get Cronus
@@ -18,7 +20,7 @@ Provides a simple example of using the Google Maps JavaScript API v3 http://code
 	http://localhost:8080/
 
 More Info 
-----------
+---------
 
 http://allthingsscala.com/2011/10/16/scala-lift-example-using-google-maps/
 
