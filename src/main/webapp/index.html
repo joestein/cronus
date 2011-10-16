@@ -7,20 +7,25 @@
   </head>
   <body class="lift:content_id=main" onunload="GUnload()">
     <div id="main" class="lift:surround?with=default;at=content">
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAioxF5FgusXtcgBwrvEujhhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxTQUfOxOXeD9edFujLJ5mTpl34dcQ" type="text/javascript"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?v=3.4&sensor=false&language=en" type="text/javascript"></script>
 		<script type="text/javascript">
 
 		function drawmap(locations) {
-		  if (GBrowserIsCompatible()) {
-		    var map = new GMap2(document.getElementById("map_canvas"));
-		    map.setCenter(new GLatLng(locations.loc[0].lat, locations.loc[0].lng), 12);
+		    var myOptions = {
+		           zoom: 12,
+		           mapTypeId: google.maps.MapTypeId.ROADMAP
+		    };
+		    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		    initialLocation = new google.maps.LatLng(locations.loc[0].lat, locations.loc[0].lng);
+		    map.setCenter(initialLocation);
+		    for(i=0; i<locations.loc.length; i++) {
+		       var point = new google.maps.LatLng(locations.loc[i].lat,locations.loc[i].lng);
 
-			for(i=0; i<locations.loc.length; i++) {
-		    	var point = new GLatLng(locations.loc[i].lat,
-		                              locations.loc[i].lng);
-		    	map.addOverlay(new GMarker(point));
-			}
-		  }
+		       var marker = new google.maps.Marker({
+		                                    position: point,
+		                                    title: locations.loc[i].title });
+		       marker.setMap(map);
+		    }      
 		}
 
 		</script>	
