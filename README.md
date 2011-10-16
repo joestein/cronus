@@ -22,7 +22,9 @@ Getting Started
 More Info 
 ---------
 
-http://allthingsscala.com/2011/10/16/scala-lift-example-using-google-maps/
+Demo Running : http://liftgooglemapexample.allthingsscala.cloudbees.net/
+
+Blog Post: http://allthingsscala.com/2011/10/16/scala-lift-example-using-google-maps/
 
 Thanx =) Joe Stein
 
