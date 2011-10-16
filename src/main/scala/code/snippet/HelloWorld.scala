@@ -6,7 +6,6 @@ import net.liftweb.util._
 import net.liftweb.common._
 import net.liftweb.http._
 import java.util.Date
-import code.lib._
 import Helpers._
 import js.JsCmds._
 import js.JE.{JsRaw, JsArray}
@@ -16,7 +15,6 @@ import JE._
 import _root_.scala.xml.{NodeSeq, Text}
 
 class HelloWorld {
-  lazy val date: Box[Date] = DependencyFactory.inject[Date] // inject the date
 
   // replace the contents of the element with what map to render
   def howdy = renderGoogleMap()
